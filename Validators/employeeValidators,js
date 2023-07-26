@@ -1,0 +1,17 @@
+const joi=require('joi')
+
+const loginShema=joi.object({
+    email: joi.email().required.messages({
+        'email.empty':'Please input email'
+    }),
+    password: joi.string().required().length(9)
+})
+
+const registerSchema=joi.object({
+    e_name : joi.string().required().min(5).max(20),
+    email :joi.string().email({})
+})
+
+module.exports={
+    loginSchema
+}
