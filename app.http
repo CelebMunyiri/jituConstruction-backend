@@ -1,0 +1,31 @@
+POST http://localhost:4500/project 
+Content-Type: application/json
+
+{
+    "project_name":"Build a Mansion at Pwani",
+    "description":"Build a Giant mansion",
+    "project_location":"Nyeri Coast",
+    "startdate":"24-07-2023",
+    "enddate":"21-08-2025"
+}
+
+
+###
+GET http://localhost:4500/project
+
+
+###
+GET http://localhost:4500/project/becf5118-444a-492b-886b-e389544f59e7
+
+
+###UPDATING PROJECT
+PUT http://localhost:4500/project/becf5118-444a-492b-886b-e389544f59e7
+Content-Type: application/json
+
+{
+    "project_name":"Build a Tarmac Road",
+    "description":"i am creating a tarmac road from nyeri to thika",
+    "project_location":"Thika",
+    "startdate":"2023-07-19",
+    "enddate":"2023-06-11"
+}
