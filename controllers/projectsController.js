@@ -81,9 +81,32 @@ const updateProject=async(req,res)=>{
         
     }
 }
+
+const deleteProject=async(req,res)=>{
+    try {
+        const id=req.params.id
+
+        let project_Index=projects.findIndex(project=>project.id==id)
+
+
+        if(project_Index< 0){
+            res.json({
+                message:"Project not found here"
+            })
+        }else{
+projects.splice(project_Index,1)
+        }
+        res.json({
+            message:"Project deleted successfully"
+        })
+    } catch (error) {
+        return res.json({Error:error})
+    }
+}
 module.exports={
     createProject,
     getProject,
     getOneProject,
-    updateProject
+    updateProject,
+    deleteProject
 }

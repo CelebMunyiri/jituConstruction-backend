@@ -15,11 +15,11 @@ GET http://localhost:4500/project
 
 
 ###
-GET http://localhost:4500/project/becf5118-444a-492b-886b-e389544f59e7
+GET http://localhost:4500/project/5692e677-0c4f-4879-9c54-4bc2827b5ca4
 
 
 ###UPDATING PROJECT
-PUT http://localhost:4500/project/becf5118-444a-492b-886b-e389544f59e7
+PUT http://localhost:4500/project/bc8dd031-2ced-4089-ac26-03a89dc70f39
 Content-Type: application/json
 
 {
@@ -29,3 +29,6 @@ Content-Type: application/json
     "startdate":"2023-07-19",
     "enddate":"2023-06-11"
 }
+
+###DELETING PROJECT
+DELETE http://localhost:4500/project/1fde31db-a319-4bca-9cc6-23a83225a1d8
