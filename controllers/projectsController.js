@@ -5,6 +5,27 @@ const { sqlConfig } = require('../Config/config');
 
 
 const createProject=async(req,res)=>{
+    const id=v4()
+
+    const {project_name,description,project_location,startdate,enddate}=req.body
+
+    mssql.connect(sqlConfig)
+    .then((pool)=>{
+        pool.request()
+        .input('id',id)
+        .input('project_name',project_name)
+        .input('description',description)
+        .input('project_location',project_location)
+        .input('startdate',startdate)
+        .input('enddate',enddate)
+        .execute('createProjectProc')
+    }).then((result)=>{
+        res.json({message:'User Created Successfully'})
+    }).catch((error)=>{
+        res.json({
+            Error:error.message
+        })
+    })
     
     try {
         
